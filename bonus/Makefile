@@ -5,20 +5,20 @@
 #                                                     +:+ +:+         +:+      #
 #    By: bhazzout <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/12/30 16:21:54 by bhazzout          #+#    #+#              #
-#    Updated: 2023/01/21 00:02:42 by bhazzout         ###   ########.fr        #
+#    Created: 2023/01/21 00:12:15 by bhazzout          #+#    #+#              #
+#    Updated: 2023/01/21 02:06:33 by bhazzout         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	push_swap
+
+NAME	=	push_swap_bonus
 
 CFLAGS	=	-Wall -Wextra -Werror 
 
 RM		=	rm -rf
 
-SOURCES	=	check_utils.c test2.c ft_printf_utils.c ft_printf.c ft_printff_utils2.c my_atoi.c push_swap.c \
-			split.c test.c push_swap_utils.c push_swap_utils2.c push_swap_utils3.c push_swap_utils4.c \
-			push_swap_utils5.c push_swap_utils6.c push_swap_utils7.c
+SOURCES	=	checker_bonus.c bonus_utils.c bonus_utils1.c my_atoi_bonus.c split_bonus.c bonus_utils2.c get_nex_line_bonus.c \
+			get_next_line_utils_bonus.c bonus_utils_instructions.c bonus_utils_instructions2.c bonus_utils_instructions3.c bonus_utils3.c
 
 OBJECTS	= 	$(SOURCES:.c=.o)
 

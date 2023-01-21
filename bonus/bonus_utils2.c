@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_utils.c                                      :+:      :+:    :+:   */
+/*   bonus_utils2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhazzout <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/19 21:33:40 by bhazzout          #+#    #+#             */
-/*   Updated: 2023/01/20 00:02:35 by bhazzout         ###   ########.fr       */
+/*   Created: 2023/01/21 00:18:37 by bhazzout          #+#    #+#             */
+/*   Updated: 2023/01/21 00:44:44 by bhazzout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 int	ft_strlen(char *av)
 {
@@ -67,4 +67,14 @@ void	*ft_calloc(size_t count, size_t size)
 		return (0);
 	ft_bzero (ptr, len);
 	return (ptr);
+}
+
+int	ft_strcmp(char *s1, char *s2)
+{
+	int	i;
+
+	i = 0;
+	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0')
+		i++;
+	return (s1[i] - s2[i]);
 }

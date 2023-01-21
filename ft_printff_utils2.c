@@ -6,18 +6,11 @@
 /*   By: bhazzout <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 03:06:51 by bhazzout          #+#    #+#             */
-/*   Updated: 2023/01/01 23:25:16 by bhazzout         ###   ########.fr       */
+/*   Updated: 2023/01/20 01:46:57 by bhazzout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	ft_isdigit(int i)
-{
-	if (i >= '0' && i <= '9')
-		return (1);
-	return (0);
-}
 
 int	ft_puthex(unsigned int k, int lU)
 {
@@ -69,14 +62,11 @@ int	ft_putnbr(int n)
 	return (count);
 }
 
-void	split_to_node(t_node **head, char *str)
+void	split_to_node(t_stack **head, char *str)
 {
 	char	**split;
 
-	if (ft_strchr(str, '	'))
-		split = ft_split(str, '	');
-	else
-		split = ft_split(str, ' ');
+	split = ft_split(str, ' ');
 	while (*split)
 	{
 		ft_lstadd_back(head, lst_new(ft_atoi(*split)));

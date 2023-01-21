@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check.c                                            :+:      :+:    :+:   */
+/*   bonus_utils1.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhazzout <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/19 21:27:48 by bhazzout          #+#    #+#             */
-/*   Updated: 2023/01/02 05:03:08 by bhazzout         ###   ########.fr       */
+/*   Created: 2023/01/21 00:05:47 by bhazzout          #+#    #+#             */
+/*   Updated: 2023/01/21 00:09:09 by bhazzout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
-void	check_double(t_node **head_a)
+void	ft_lstadd_back(t_stack **lst, t_stack *new)
 {
-	t_node	*tmp;
-	t_node	*tmp2;
+	t_stack	*lastnode;
 
-	tmp = *head_a;
-	while (tmp->link != NULL)
+	if (!lst)
+		return ;
+	if (!*lst)
+		*lst = new;
+	else
 	{
-		tmp2 = tmp;
-		while (tmp2->link != NULL)
-		{
-			if (tmp->i == tmp2->link->i)
-			{
-				printf("Error\nDuplicated number %d and %d !!\n", tmp->i, tmp2->link->i);
-				exit (1);
-			}
-			tmp2 = tmp2->link;
-		}
-		tmp = tmp->link;
+		lastnode = *lst;
+		while (lastnode->link != NULL)
+				lastnode = lastnode->link;
+			lastnode->link = new;
 	}
 }

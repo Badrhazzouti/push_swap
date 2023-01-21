@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   my_atoi.c                                          :+:      :+:    :+:   */
+/*   my_atoi_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhazzout <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/30 14:07:17 by bhazzout          #+#    #+#             */
-/*   Updated: 2023/01/18 08:39:00 by bhazzout         ###   ########.fr       */
+/*   Created: 2023/01/21 00:10:44 by bhazzout          #+#    #+#             */
+/*   Updated: 2023/01/21 00:14:55 by bhazzout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 int	ft_isdigit(char *str)
 {
@@ -42,7 +42,7 @@ void	check_outsider(char *str)
 	{
 		if (str[i] > '9')
 		{
-			ft_printf("Error, outsider %c!!\n", str[i]);
+			write(2, "Error\n", 6);
 			exit (1);
 		}
 		else
@@ -54,12 +54,12 @@ void	check_int(int r, int sign)
 {
 	if (r > 32767 && (sign == 1))
 	{
-		ft_printf("Error\n");
+		write(2, "Error\n", 6);
 		exit (1);
 	}
 	else if (r - 1 > 32767 && (sign == -1))
 	{
-		ft_printf("Error\n");
+		write(2, "Error\n", 6);
 		exit (1);
 	}
 }

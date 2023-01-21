@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   push_swap_bonus.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhazzout <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/19 02:22:42 by bhazzout          #+#    #+#             */
-/*   Updated: 2023/01/20 02:03:43 by bhazzout         ###   ########.fr       */
+/*   Created: 2023/01/20 22:56:26 by bhazzout          #+#    #+#             */
+/*   Updated: 2023/01/21 02:45:57 by bhazzout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef PUSH_SWAP_BONUS_H
+# define PUSH_SWAP_BONUS_H
 
 # include <fcntl.h>
-# include <stdio.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
 # include <stdbool.h>
 # include <string.h>
+# include <limits.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1
+# endif
 
 typedef struct list
 {
@@ -45,6 +49,11 @@ typedef struct list3
 	int			end;
 }				t_array;
 
+void			instructions_maker(char *instru, t_stack **a, t_stack **b);
+char			*get_next_line(int fd);
+char			*ft_strjoin(char *s1, char *s2);
+char			*ft_strdup(char *s1);
+int				ft_strcmp(char *s1, char *s2);
 void			check_double(t_stack **head_a);
 int				ft_isdigit(char *str);
 int				ft_strlen(char *av);
@@ -59,7 +68,7 @@ unsigned int	ft_putunsi(unsigned int n);
 int				ft_puthex(unsigned int k, int lU);
 int				ft_putnbr(int n);
 t_stack			*lst_new(int data);
-void			lst_addfront(t_stack **lst, t_stack *new);
+void			lst_addfront(t_stack **lst, t_stack *n);
 void			ft_lstadd_back(t_stack **lst, t_stack *new);
 void			ft_lstclear(t_stack **lst, void (*del)(void *));
 void			ft_lstdelete(t_stack **head, int data);
